@@ -207,22 +207,6 @@ add action=accept chain=input comment="Allow Est and Related - Input" \
     connection-state=established,related disabled=yes in-interface-list=WAN
 add action=accept chain=forward comment="Allow Est and Related - Forward" \
     connection-state=established,related disabled=yes in-interface-list=WAN
-/ip firewall mangle
-add action=mark-connection chain=prerouting comment=\
-    "Allow Winbox and Ping(icmp) traffic out 2nd connection" dst-port=8291 \
-    in-interface=ether10-Failover new-connection-mark=2ndConnection \
-    passthrough=yes protocol=tcp
-add action=mark-connection chain=prerouting in-interface=ether10-Failover \
-    new-connection-mark=2ndConnection passthrough=yes protocol=icmp
-add action=mark-routing chain=prerouting dst-port=8291 in-interface=\
-    ether10-Failover new-routing-mark=Out2ndConnection passthrough=no \
-    protocol=tcp
-add action=mark-routing chain=prerouting in-interface=ether10-Failover \
-    new-routing-mark=Out2ndConnection passthrough=no protocol=icmp
-add action=mark-routing chain=prerouting connection-mark=2ndConnection \
-    new-routing-mark=Out2ndConnection passthrough=no
-add action=mark-routing chain=output connection-mark=2ndConnection \
-    new-routing-mark=Out2ndConnection passthrough=no
 /ip firewall nat
 add action=masquerade chain=srcnat comment=Mask out-interface-list=WAN
 /ip firewall raw
