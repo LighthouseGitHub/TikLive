@@ -6,7 +6,6 @@ set [ find default-name=ether10 ] name=ether10-Failover
 /interface list
 add name=WAN
 add name=LAN
-add name=ALL-INTERNAL
 /ip dhcp-server option
 add code=66 name=VOIP value="'http://ndp.ucaasnetwork.com/cfg/'"
 /interface bridge port
@@ -20,7 +19,6 @@ add bridge=bridge-local ingress-filtering=no interface=ether8
 add bridge=bridge-local ingress-filtering=no interface=ether9
 /interface list member
 add interface=ether1-gateway list=WAN
-add interface=bridge-local list=ALL-INTERNAL
 add interface=bridge-local list=LAN
 /ip dns
 set servers=1.1.1.1,8.8.8.8
