@@ -2,7 +2,6 @@
 add name=bridge-local
 /interface ethernet
 set [ find default-name=ether1 ] name=ether1-gateway
-set [ find default-name=ether13 ] name=ether13-Failover
 /interface list
 add name=WAN
 add name=LAN
@@ -20,6 +19,7 @@ add bridge=bridge-local ingress-filtering=no interface=ether9
 add bridge=bridge-local ingress-filtering=no interface=ether10
 add bridge=bridge-local ingress-filtering=no interface=ether11
 add bridge=bridge-local ingress-filtering=no interface=ether12
+add bridge=bridge-local ingress-filtering=no interface=ether13
 /interface list member
 add interface=ether1-gateway list=WAN
 add interface=bridge-local list=LAN
@@ -27,7 +27,6 @@ add interface=bridge-local list=LAN
 set servers=1.1.1.1,8.8.8.8
 /tool graphing interface
 add interface=ether1-gateway
-add interface=ether13-Failover
 /system logging action
 set 1 disk-file-count=30
 add disk-file-count=20 disk-file-name=ErrorLog name=Error target=disk
