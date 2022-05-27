@@ -20,7 +20,6 @@ add bridge=bridge-local ingress-filtering=no interface=ether9
 add bridge=bridge-local ingress-filtering=no interface=ether10
 add bridge=bridge-local ingress-filtering=no interface=ether11
 add bridge=bridge-local ingress-filtering=no interface=ether12
-add bridge=bridge-local ingress-filtering=no interface=ether13
 /interface list member
 add interface=ether1-gateway list=WAN
 add interface=bridge-local list=LAN
