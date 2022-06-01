@@ -17,6 +17,7 @@ add bridge=bridge-local ingress-filtering=no interface=ether6
 add bridge=bridge-local ingress-filtering=no interface=ether7
 add bridge=bridge-local ingress-filtering=no interface=ether8
 add bridge=bridge-local ingress-filtering=no interface=ether9
+add bridge=bridge-local ingress-filtering=no interface=ether10
 add bridge=bridge-local ingress-filtering=no interface=sfp-sfpplus1
 /interface list member
 add interface=ether1-gateway list=WAN
@@ -25,7 +26,6 @@ add interface=bridge-local list=LAN
 set servers=1.1.1.1,8.8.8.8
 /tool graphing interface
 add interface=ether1-gateway
-add interface=ether10-Failover
 /system logging action
 set 1 disk-file-count=30
 add disk-file-count=20 disk-file-name=ErrorLog name=Error target=disk
