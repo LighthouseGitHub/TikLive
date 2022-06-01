@@ -20,6 +20,12 @@ add bridge=bridge-local ingress-filtering=no interface=ether9
 add bridge=bridge-local ingress-filtering=no interface=sfp-sfpplus1
 add bridge=bridge-local ingress-filtering=no interface=wlan1
 add bridge=bridge-local ingress-filtering=no interface=wlan2
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+add authentication-types=wpa2-psk eap-methods="" mode=dynamic-keys name=profile1 supplicant-identity=""
+/interface wireless
+set [ find default-name=wlan1 ] band=5ghz-n/ac channel-width=20/40mhz-Ce country="united states3" disabled=no frequency=auto mode=ap-bridge security-profile=profile1 ssid=CHANGEME
+set [ find default-name=wlan2 ] band=2ghz-g/n channel-width=20/40mhz-eC country="united states3" disabled=no frequency=auto mode=ap-bridge security-profile=profile1 ssid=CHANGEME
 /interface list member
 add interface=ether1-gateway list=WAN
 add interface=bridge-local list=LAN
@@ -27,7 +33,6 @@ add interface=bridge-local list=LAN
 set servers=1.1.1.1,8.8.8.8
 /tool graphing interface
 add interface=ether1-gateway
-add interface=ether10-Failover
 /system logging action
 set 1 disk-file-count=30
 add disk-file-count=20 disk-file-name=ErrorLog name=Error target=disk
