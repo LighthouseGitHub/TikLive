@@ -22,7 +22,7 @@ add bridge=bridge-local ingress-filtering=no interface=wlan1
 add bridge=bridge-local ingress-filtering=no interface=wlan2
 /interface wireless security-profiles
 set [ find default=yes ] supplicant-identity=MikroTik
-add authentication-types=wpa2-psk eap-methods="" mode=dynamic-keys name=profile1 supplicant-identity="" wpa2-pre-shared-key=CHANGEME"
+add authentication-types=wpa2-psk eap-methods="" mode=dynamic-keys name=profile1 supplicant-identity="" wpa2-pre-shared-key="CHANGEME"
 /interface wireless
 set [ find default-name=wlan1 ] band=5ghz-n/ac channel-width=20/40mhz-Ce country="united states3" disabled=no frequency=auto mode=ap-bridge security-profile=profile1 ssid=CHANGEME
 set [ find default-name=wlan2 ] band=2ghz-g/n channel-width=20/40mhz-eC country="united states3" disabled=no frequency=auto mode=ap-bridge security-profile=profile1 ssid=CHANGEME
