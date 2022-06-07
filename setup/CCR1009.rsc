@@ -39,8 +39,8 @@ set 2 action=Warning
 set 3 action=Critical
 add action=IPsec topics=error,ipsec
 /ip ipsec profile
-add dh-group=modp1024 dpd-interval=10s enc-algorithm=aes-256 hash-algorithm=sha256 lifetime=1h name="Main STS" proposal-check=claim
+add dh-group=modp4096 dpd-interval=10s enc-algorithm=aes-256 hash-algorithm=sha384 name="Main STS"
 /ip ipsec proposal
-add auth-algorithms=sha256 enc-algorithms=aes-256-cbc lifetime=30s name="Main STS"
+add auth-algorithms=sha256 enc-algorithms=aes-256-cbc name="Main STS" pfs-group=modp4096
 /lcd
 set enabled=no touch-screen=disabled
