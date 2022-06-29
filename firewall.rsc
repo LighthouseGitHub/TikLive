@@ -235,5 +235,3 @@ set www port=8080
 set ssh disabled=yes
 set api disabled=yes
 set api-ssl disabled=yes
-/system resource irq rps
-set sfp-sfpplus1 disabled=no
