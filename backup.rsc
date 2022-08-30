@@ -21,7 +21,7 @@ add dont-require-permissions=no name="SFTP BACKUP" owner=admin policy=\
     \ndelay 1\r\
     \n:global rName [/system identity get name] \r\
     \n/log info \"Posting to REP Server\"\r\
-    \n/tool fetch url=\$baboo user=\"TIKup\" password=\"\$tatooine\" src-path=\"export.rsc\"\
+    \n/tool fetch url=\$naboo user=\"TIKup\" password=\"\$tatooine\" src-path=\"export.rsc\"\
     \_dst-path=\"\$rName\\backup\" upload=yes\r\
     \n/log info \"Posted to REP Server\"\r\
     \ndelay 5\r\
