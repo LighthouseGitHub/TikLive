@@ -8,12 +8,6 @@ add name=WAN
 add name=LAN
 /ip dhcp-server option
 add code=66 name=VOIP value="'http://ndp.ucaasnetwork.com/cfg/'"
-/interface wireless security-profiles
-set [ find default=yes ] supplicant-identity=MikroTik
-add authentication-types=wpa2-psk eap-methods="" mode=dynamic-keys name=profile1 supplicant-identity="" wpa2-pre-shared-key="CHANGEME"
-/interface wireless
-set [ find default-name=wlan1 ] band=5ghz-n/ac channel-width=20/40mhz-Ce country="united states3" disabled=no frequency=auto mode=ap-bridge security-profile=profile1 ssid=CHANGEME
-set [ find default-name=wlan2 ] band=2ghz-g/n channel-width=20/40mhz-eC country="united states3" disabled=no frequency=auto mode=ap-bridge security-profile=profile1 ssid=CHANGEME
 /interface list member
 add interface=ether1-gateway list=WAN
 add interface=bridge-local list=LAN
