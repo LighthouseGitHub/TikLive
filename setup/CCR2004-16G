@@ -26,13 +26,13 @@ add disk-file-count=10 disk-file-name=IPsecLog name=IPsec target=disk
 add disk-file-count=10 disk-file-name=WarningLog name=Warning target=disk
 add disk-file-count=10 disk-file-name=Infolog name=Info target=disk
 /interface bridge port
-add bridge=bridge-local ingress-filtering=no interface=ether2
-add bridge=bridge-local ingress-filtering=no interface=ether3
-add bridge=bridge-local ingress-filtering=no interface=ether4
-add bridge=bridge-local ingress-filtering=no interface=ether5
-add bridge=bridge-local ingress-filtering=no interface=ether6
-add bridge=bridge-local ingress-filtering=no interface=ether7
-add bridge=bridge-local ingress-filtering=no interface=sfp-sfpplus1
+add bridge=bridge-local interface=ether2
+add bridge=bridge-local interface=ether3
+add bridge=bridge-local interface=ether4
+add bridge=bridge-local interface=ether5
+add bridge=bridge-local interface=ether6
+add bridge=bridge-local interface=ether7
+add bridge=bridge-local interface=sfp-sfpplus1
 add bridge=bridge-local interface=ether8
 add bridge=bridge-local interface=ether10
 add bridge=bridge-local interface=ether9
