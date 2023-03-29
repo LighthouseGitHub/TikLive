@@ -1,7 +1,9 @@
 /system script
-add dont-require-permissions=no name="SFTP BACKUP" owner=admin policy=\
-    ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/log info \"Li\
-    ghthouse Mikrotik backup\"\r\
+add dont-require-permissions=no name="SFTP BACKUP" owner=lighthouse policy=\
+    ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":global naboo\r\
+    \n:global tatooine\r\
+    \n:global rName\r\
+    \n/log info \"Lighthouse Mikrotik backup\"\r\
     \n/log info \"checking for Gateway\"\r\
     \n:if ( [/ip route find dst-address=\"0.0.0.0/0\"] = \"\" ) do={\r\
     \n /log info \"Waiting 20 seconds for default gateway\"\r\
@@ -21,8 +23,9 @@ add dont-require-permissions=no name="SFTP BACKUP" owner=admin policy=\
     \ndelay 1\r\
     \n:global rName [/system identity get name] \r\
     \n/log info \"Posting to REP Server\"\r\
-    \n/tool fetch url=\$naboo user=\"TIKup\" password=\"\$tatooine\" src-path=\"export.rsc\"\
-    \_dst-path=\"\$rName\\backup\" upload=yes\r\
+    \n/log info \$naboo\r\
+    \n/tool fetch url=\"\$naboo/\$rName/\$rName.rsc\" user=\"TIKup\" password=\$tatooine src-path=\"export.rsc\" dst-\
+    path=\"\$rName\\backup\" upload=yes\r\
     \n/log info \"Posted to REP Server\"\r\
     \ndelay 5\r\
     \n/log info \"Starting Cleanup\"\r\
