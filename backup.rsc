@@ -3,6 +3,7 @@ add dont-require-permissions=no name="SFTP BACKUP" owner=lighthouse policy=\
     ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":global naboo\r\
     \n:global tatooine\r\
     \n:global rName\r\
+    \n:global naboo\r\
     \n/log info \"Lighthouse Mikrotik backup\"\r\
     \n/log info \"checking for Gateway\"\r\
     \n:if ( [/ip route find dst-address=\"0.0.0.0/0\"] = \"\" ) do={\r\
