@@ -2,14 +2,14 @@
 add dont-require-permissions=no name=RegionBlockList owner=admin policy=\
     ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/\
     log warning \"Starting China Region List refresh\"\r\
-    \n/tool fetch url=http://checkin.lighthouseit.us/tik/lists/ch_list.rsc\r\
+    \n/tool fetch url=http://checkin.lighthouseit.us/tik/lists/cn_list.rsc\r\
     \n:foreach rule in=[/system logging find] do={\r\
     \n:if ([:find [/system logging get \$rule topics] \"info\" -1] > -1) do={\
     \r\
     \n/system logging disable \$rule\r\
     \n}\r\
     \n}\r\
-    \nimport ch_list.rsc\r\
+    \nimport cn_list.rsc\r\
     \n:foreach rule in=[/system logging find] do={\r\
     \n:if ([:find [/system logging get \$rule topics] \"info\" -1] > -1) do={\
     \r\
