@@ -63,7 +63,7 @@ add action=drop chain=forward comment="Drop Outbound Malware" disabled=yes \
 add action=drop chain=forward comment="Drop Outbound Russia" disabled=yes \
     dst-address-list="ru zone" out-interface-list=WAN
 add action=drop chain=forward comment="Drop Outbound China" disabled=yes \
-    dst-address-list="ch zone" out-interface-list=WAN
+    dst-address-list="cn zone" out-interface-list=WAN
 add action=drop chain=forward comment="Drop Outbound RDP" disabled=yes \
     out-interface-list=WAN protocol=rdp
 add action=drop chain=forward comment="Drop Outbound MS RPC" disabled=yes \
@@ -219,7 +219,7 @@ add action=drop chain=prerouting comment="Drop Inbound Malware" \
 add action=drop chain=prerouting comment="Drop Pastebin" in-interface-list=\
     WAN src-address-list=pastebin
 add action=drop chain=prerouting comment="Drop China" in-interface-list=WAN \
-    src-address-list="ch zone"
+    src-address-list="cn zone"
 add action=drop chain=prerouting comment="Drop Russia" in-interface-list=WAN \
     src-address-list="ru zone"
 /ip firewall service-port
