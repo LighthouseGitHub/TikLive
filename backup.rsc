@@ -25,7 +25,7 @@ add dont-require-permissions=no name="SFTP BACKUP" owner=lighthouse policy=\
     \n:global rName [/system identity get name] \r\
     \n/log info \"Posting to REP Server\"\r\
     \n/log info \$naboo\r\
-    \n/tool fetch url=\"\$naboo/\$rName/\$rName.rsc\" user=\"TIKup\" password=\$tatooine src-path=\"export.rsc\" dst-\
+    \n/tool fetch url=\"\$naboo\" user=\"TIKup\" password=\$tatooine src-path=\"export.rsc\" dst-\
     path=\"\$rName\\backup\" upload=yes\r\
     \n/log info \"Posted to REP Server\"\r\
     \ndelay 5\r\
