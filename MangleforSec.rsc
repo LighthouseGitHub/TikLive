@@ -7,4 +7,4 @@ add action=mark-connection chain=prerouting comment="Allow Winbox through COAX c
 add action=mark-connection chain=prerouting comment="Allow ping through COAX connection" in-interface=$Seccon new-connection-mark="2nddary winbox" passthrough=yes protocol=icmp
 add action=mark-routing chain=output connection-mark="2nddary winbox" new-routing-mark=SecWinboxTable
 /ip route
-add check-gateway=ping comment="Route for 2nd connection monitoring" distance=2 gateway=$gw routing-table="SecWinboxTable"
+add comment="Route for 2nd connection monitoring" distance=2 gateway=$gw routing-table="SecWinboxTable"
