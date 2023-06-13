@@ -23,9 +23,6 @@ add address=198.51.100.0/24 list=not_in_internet
 add address=203.0.113.0/24 list=not_in_internet
 add address=100.64.0.0/10 list=not_in_internet
 add address=240.0.0.0/4 list=not_in_internet
-add address=98.6.45.32/28 comment=Lighthouse list=voip
-add address=72.48.113.133/27 comment=Lighthouse list=voip
-add address=24.155.232.157/28 comment=Lighthouse list=voip
 add address=104.20.209.20 list=pastebin
 add address=104.20.208.21 list=pastebin
 add address=pastebin.com list=pastebin
