@@ -39,14 +39,10 @@ add bridge=bridge-local interface=sfp-sfpplus4
 set discover-interface-list=!dynamic
 /interface list member
 add interface=bridge-local list=LAN
-/ip address
-add address=192.168.20.8/24 interface=ether12 network=192.168.20.0
 /ip dhcp-client
 add disabled=yes interface=ether12
 /ip dns
 set servers=1.1.1.1,8.8.8.8
-/ip route
-add disabled=no dst-address=0.0.0.0/0 gateway=192.168.20.4 routing-table=main suppress-hw-offload=no
 /system clock
 set time-zone-name=America/Chicago
 /system identity
