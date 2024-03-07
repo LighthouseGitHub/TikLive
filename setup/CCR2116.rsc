@@ -3,6 +3,8 @@ add name=bridge-local
 /interface list
 add name=WAN
 add name=LAN
+/interface ethernet
+set [ find default-name=ether1 ] name=ether1-gateway
 /ip dhcp-server option
 add code=66 name=VOIP value="'http://ndp.ucaasnetwork.com/cfg/'"
 /ip ipsec profile
