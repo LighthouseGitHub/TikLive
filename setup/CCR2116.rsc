@@ -5,6 +5,11 @@ add name=WAN
 add name=LAN
 /interface ethernet
 set [ find default-name=ether1 ] name=ether1-gateway
+/interface list member
+add interface=ether1-gateway list=WAN
+add interface=bridge-local list=LAN
+/tool graphing interface
+add interface=ether1-gateway
 /ip dhcp-server option
 add code=66 name=VOIP value="'http://ndp.ucaasnetwork.com/cfg/'"
 /ip ipsec profile
@@ -37,8 +42,6 @@ add bridge=bridge-local interface=sfp-sfpplus3
 add bridge=bridge-local interface=sfp-sfpplus4
 /ip neighbor discovery-settings
 set discover-interface-list=!dynamic
-/interface list member
-add interface=bridge-local list=LAN
 /ip dhcp-client
 add disabled=yes interface=ether1-gateway
 /ip dns
