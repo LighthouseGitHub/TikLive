@@ -3,8 +3,6 @@ add name=bridge-local
 /interface list
 add name=WAN
 add name=LAN
-/interface wireless security-profiles
-set [ find default=yes ] supplicant-identity=MikroTik
 /ip dhcp-server option
 add code=66 name=VOIP value="'http://ndp.ucaasnetwork.com/cfg/'"
 /ip ipsec profile
@@ -40,7 +38,7 @@ set discover-interface-list=!dynamic
 /interface list member
 add interface=bridge-local list=LAN
 /ip dhcp-client
-add disabled=yes interface=ether12
+add disabled=yes interface=ether1-gateway
 /ip dns
 set servers=1.1.1.1,8.8.8.8
 /system clock
