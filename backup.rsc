@@ -1,6 +1,5 @@
 /system script
-add dont-require-permissions=no name="SFTP BACKUP" owner=lighthouse policy=\
-    ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":global naboo\r\
+add dont-require-permissions=no name=SFTP_BACKUP owner=admin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":global naboo\r\
     \n:global tatooine\r\
     \n:global rName\r\
     \n:global naboo\r\
@@ -25,8 +24,7 @@ add dont-require-permissions=no name="SFTP BACKUP" owner=lighthouse policy=\
     \n:global rName [/system identity get name] \r\
     \n/log info \"Posting to REP Server\"\r\
     \n/log info \$naboo\r\
-    \n/tool fetch url=\"\$naboo\" user=\"TIKup\" password=\$tatooine src-path=\"export.rsc\" dst-\
-    path=\"\$rName\\backup\" upload=yes\r\
+    \n/tool fetch address=\$naboo mode=sftp user=\"TIKup\" password=\$tatooine src-path=\"export.rsc\" dst-path=\"\$rName\\\\\$rName.rsc\" upload=yes\r\
     \n/log info \"Posted to REP Server\"\r\
     \ndelay 5\r\
     \n/log info \"Starting Cleanup\"\r\
