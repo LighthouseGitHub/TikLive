@@ -32,6 +32,7 @@ add action=drop chain=input comment="Drop Port Scanners" disabled=yes \
 add action=drop chain=input comment="Drop Winbox except Local/Lighthouse" \
     disabled=yes dst-port=8291 in-interface=!bridge-local protocol=tcp \
     src-address-list=!voip
+add action=accept comment="Allow SNMP to Lighthouse" chain=input dst-port=161-162 in-interface-list=WAN protocol=udp src-address-list=voip
 add action=drop chain=input comment="Drop Other RouterOS ports" disabled=yes \
     dst-port=8443,8080,8728,8729,3128,2000 in-interface=!bridge-local \
     protocol=tcp src-address-list=!voip
