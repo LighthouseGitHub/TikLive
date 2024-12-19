@@ -17,7 +17,6 @@ add auth-algorithms=sha256 enc-algorithms=aes-256-cbc name="Main STS" pfs-group=
     modp4096
 /port
 set 0 name=serial0
-set 1 name=serial1
 /system logging action
 set 1 disk-file-count=30
 add disk-file-count=20 disk-file-name=ErrorLog name=Error target=disk
